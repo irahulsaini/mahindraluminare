@@ -12,7 +12,7 @@
                     max-height: 60px;
                }
                .navbar{
-                    z-index:9999;                    
+                    z-index:1000;                    
                }
                .navbar-primary{
                     background:transparent;
@@ -21,6 +21,7 @@
                     position:fixed;
                     top:0;
                     background:rgba(0,0,0,.5);
+                    width:100%;
                }
                .navbar-primary .nav-item .nav-link{
                     color:#fff;
@@ -30,16 +31,86 @@
                     min-height: 400px;
                     background-size:cover;
                }
+               .front-banner{
+                    margin-top:-86px;
+                    position:relative;
+               }
+               img{max-width: 100%}
+               .section-heading{
+                    font-weight:400;
+               }
+               .highlight-item h6{
+                    font-weight:600;
+                    color:#d47d40;
+                    letter-spacing: .3px;
+               }
+               .rscontactfixed{
+                    position:fixed;
+                    right:0;
+                    top:30%;
+                    z-index:999;
+               }
+               .rscontactfixed a{
+                    width:50px;
+                    height:50px;
+                    border-radius:100%;
+                    font-size:33px;
+                    line-height:50px;
+               }
+               .price{
+                    background-image:url('./dist/images/gallery/thumb/1.jpg');
+                    background-size:cover;
+                    background-position:center;
+               }
+               .price .price-wrapper{
+                    background-color:rgba(6, 142, 185,.85);
+               }
+               .price .btn-download{
+                    letter-spacing:2px;
+               }
+               .rs-banner-form{
+                    background:rgba(0,0,0,.5);
+                    color:#fff;
+                    width:100%;
+                    max-width: 400px;
+                    position:absolute;
+                    right:11%;
+                    top:20%;
+                    z-index: 999;
+               }
+               .rs-banner-form h4,
+               .rs-banner-form button{
+                    letter-spacing: 2px;
+               }
+               @media only screen and (max-width: 768px) {
+
+               }
+               @media only screen and (max-width: 992px) {
+                    .navbar-primary{
+                         background:rgba(0,0,0,.4);
+                    }
+                    .front-banner{
+                         margin-top:0;
+                    }
+               }
+               @media only screen and (max-width: 900px) {
+                    .rs-banner-form{
+                         position: relative;
+                         right:initial;
+                         top:2rem;
+                    }
+
+               }
           </style>
      </head>
      <body>
           <!-- Navbar -->
-          <nav class="navbar bg-white">
+          <nav class="navbar bg-dark">
                <div class="container">
                     <a class="navbar-brand" href="#"><img src="./dist/images/logo.png"/></a>
                </div>
           </nav>
-          <nav class="navbar navbar-expand-lg navbar-dark navbar-primary">
+          <nav class="navbar navbar-expand-lg navbar-dark navbar-primary sticky-top">
                <div class="container">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bsnavbar" aria-controls="bsnavbar" aria-expanded="false" aria-label="Toggle navigation">
                          <span class="navbar-toggler-icon"></span>
@@ -47,67 +118,427 @@
                     <div class="collapse navbar-collapse" id="bsnavbar">
                          <ul class="navbar-nav ml-auto">
                               <li class="nav-item active">
-                                   <a class="nav-link small text-uppercase" href="#">Home</a>
+                                   <a class="nav-link text-uppercase" href="#home">Home</a>
                               </li>
                               <li class="nav-item d-none d-lg-inline">
-                                   <a class="nav-link small">|</a>
+                                   <a class="nav-link">|</a>
                               </li>
                               <li class="nav-item">
-                                   <a class="nav-link small text-uppercase" href="#">About</a>
+                                   <a class="nav-link text-uppercase" href="#about">About</a>
                               </li>
                               <li class="nav-item d-none d-lg-inline">
-                                   <a class="nav-link small">|</a>
+                                   <a class="nav-link">|</a>
                               </li>
                               <li class="nav-item">
-                                   <a class="nav-link small text-uppercase" href="#">Features</a>
+                                   <a class="nav-link text-uppercase" href="#features">Features</a>
                               </li>
                               <li class="nav-item d-none d-lg-inline">
-                                   <a class="nav-link small">|</a>
+                                   <a class="nav-link">|</a>
                               </li>
                               <li class="nav-item">
-                                   <a class="nav-link small text-uppercase" href="#">Amenities</a>
+                                   <a class="nav-link text-uppercase" href="#amenities">Amenities</a>
                               </li>
                               <li class="nav-item d-none d-lg-inline">
-                                   <a class="nav-link small">|</a>
+                                   <a class="nav-link">|</a>
                               </li>
                               <li class="nav-item">
-                                   <a class="nav-link small text-uppercase" href="#">Gallery</a>
+                                   <a class="nav-link text-uppercase" href="#gallery">Gallery</a>
                               </li>
                               <li class="nav-item d-none d-lg-inline">
-                                   <a class="nav-link small">|</a>
+                                   <a class="nav-link">|</a>
                               </li>
                               <li class="nav-item">
-                                   <a class="nav-link small text-uppercase" href="#">Price</a>
+                                   <a class="nav-link text-uppercase" href="#price">Price</a>
                               </li>
                               <li class="nav-item d-none d-lg-inline">
-                                   <a class="nav-link small">|</a>
+                                   <a class="nav-link">|</a>
                               </li>
                               <li class="nav-item">
-                                   <a class="nav-link small text-uppercase" href="#">Contact</a>
+                                   <a class="nav-link text-uppercase" data-toggle="modal" data-target="#contact" href="javascript:void(0)">Contact</a>
                               </li>
                          </ul>
                     </div>
                </div>
           </nav>
-
-          <section class="carousel position-relative fixed-top">
-               <div class="carousel slide" id="carousel" data-ride="carousel">
+          <section class="front-banner">
+               <div class="carousel slide carousel-fade" data-ride="carousel" id="carousel">
                     <div class="carousel-inner">
-                         <div class="carousel-slide active" style="background-image:url('./dist/images/slider/1.jpeg')">
+                         <div class="carousel-item active">
+                              <img src="./dist/images/slider/1.jpg" class="w-100"/>
+                         </div>
+                         <div class="carousel-item">
+                              <img src="./dist/images/slider/2.jpg" class="w-100"/>
+                         </div>
+                         <div class="carousel-item">
+                              <img src="./dist/images/slider/3.jpg" class="w-100"/>
+                         </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                         <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                         <span class="sr-only">Next</span>
+                    </a>
+               </div>
 
+               <form class="rs-banner-form px-3 py-4 mx-auto text-center">
+                    <h4 class="text-uppercase">Enquire Now</h4>
+                    <p class="text-uppercase">2, 3 & 4 Bhk Apartments<br/>Yes! I'm Interested in This Project</p>
+                    <div class="form-group">
+                         <input type="text" class="form-control bg-light form-control-sm py-2 px-3 h-auto" placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                         <input type="text" class="form-control bg-light form-control-sm py-2 px-3 h-auto" placeholder="Email" />
+                    </div>
+                    <div class="form-group">
+                         <input type="text" class="form-control bg-light form-control-sm py-2 px-3 h-auto" placeholder="Phone" />
+                    </div>
+                    <div class="form-group">
+                         <select name="city" class="form-control bg-light form-control-sm py-2 px-3 h-auto">
+                              <option value="">City</option> 
+                              <option value="Delhi">Delhi</option> 
+                              <option value="Faridabad">Faridabad</option> 
+                              <option value="Ghaziabad">Ghaziabad</option>
+                              <option value="Gurugram">Gurugram</option> 
+                              <option value="Noida">Noida</option>
+                              <option value="Rohtak">Rohtak</option>
+                              <option value="Sonipat">Sonipat</option>
+                         </select>
+                    </div>
+                    <button class="btn btn-primary py-2 h-auto border-light btn-block text-uppercase">Submit</button>
+               </form>
+          </section>
+          <section class="welcome py-5" id="about">
+               <div class="container">
+                    <div class="row">
+                         <div class="col-md-6 col-xl-8">
+                              <h4 class="text-uppercase">Mahindra Luminare&nbsp;Overview</h4>
+                              <p class="text-muted text-justify">Cocooned from the world, imagine a space that is an expression of yourself. The pure luxury that you can experience within the solitude of the sky. Built with meticulousness and inimitable features, Mahindra Luminare is just for the chosen few. A private haven that soothes the soul. Luxury flats in Gurgaon at Mahindra Luminare feature wrap-around balconies, corner homes, private lift and a lobby that offers solace and comfort beyond compare. At Luminare life extends beyond the home to embrace the everyday. An environment that evokes a sense of comfort among the clouds. And the air about it, so rarefied. Come, experience it at Sector 59, Golf Course Extension. Rd. Gurgaon, India.</p>
+
+                              <div class="row small">
+                                   <div class="col-12 col-sm-6 col-lg-4 text-center">
+                                        <div class="border border-primary mb-2"></div>
+                                        <p class="font-weight-bold"><i class="fa fa-hand-o-right mr-2 text-primary"></i>Ready-to-move-in &amp; under construction</p>
+                                   </div>
+                                   <div class="col-12 col-sm-6 col-lg-4 text-center">
+                                        <div class="border border-primary mb-2"></div>
+                                        <p class="font-weight-bold"><i class="fa fa-hand-o-right mr-2 text-primary"></i>3 &amp; 4 BHK apartments &amp; penthouses</p>
+                                   </div>
+                                   <div class="col-12 col-sm-6 col-lg-4 text-center">
+                                        <div class="border border-primary mb-2"></div>
+                                        <p class="font-weight-bold"><i class="fa fa-hand-o-right mr-2 text-primary"></i>Starting <i class="fa fa-inr"></i> 3.58 Cr* (All inclusive)</p>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="col-md-6 col-xl-4 text-center">
+                              <img src="./dist/images/about.jpg"/>
+                         </div>
+
+                    </div>
+               </div>
+          </section>
+
+          <section id="features">
+               <div class="container-fluid px-0 bg-dark">
+                    <div class="row no-gutters">
+                         <div class="col-12 col-lg-6 py-5" style="min-height:500px;background-image:url('./dist/images/building.jpg');background-size:cover;">
+
+                         </div>
+                         <div class="col-12 col-lg-6 py-5">
+                              <div class="px-4 text-white">
+                                   <h4 class="text-uppercase mb-5">Key Highlights</h4>
+                                   <div class="row">
+                                        <div class="col-6">
+                                             <div class="highlight-item">
+                                                  <h6 class="small">Urban River with Gazebos to Relax</h6>
+                                                  <p class="small text-muted">Lorem ipsum, or lipsum as it is sometimes known</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-6">
+                                             <div class="highlight-item">
+                                                  <h6 class="small">Nature Friendly Apartments</h6>
+                                                  <p class="small text-muted">Lorem ipsum, or lipsum as it is sometimes known</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-6">
+                                             <div class="highlight-item">
+                                                  <h6 class="small">Wrap-around Balcony</h6>
+                                                  <p class="small text-muted">Lorem ipsum, or lipsum as it is sometimes known</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-6">
+                                             <div class="highlight-item">
+                                                  <h6 class="small">Private Lift Lobby</h6>
+                                                  <p class="small text-muted">Lorem ipsum, or lipsum as it is sometimes known</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-6">
+                                             <div class="highlight-item">
+                                                  <h6 class="small">VRV Air Conditioning</h6>
+                                                  <p class="small text-muted">Lorem ipsum, or lipsum as it is sometimes known</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-6">
+                                             <div class="highlight-item">
+                                                  <h6 class="small">Italian Marble Flooring</h6>
+                                                  <p class="small text-muted">Lorem ipsum, or lipsum as it is sometimes known</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-6">
+                                             <div class="highlight-item">
+                                                  <h6 class="small">Energy Efficient Equipments</h6>
+                                                  <p class="small text-muted">Lorem ipsum, or lipsum as it is sometimes known</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-6">
+                                             <div class="highlight-item">
+                                                  <h6 class="small">3 Tier Security System</h6>
+                                                  <p class="small text-muted">Lorem ipsum, or lipsum as it is sometimes known</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-6">
+                                             <div class="highlight-item">
+                                                  <h6 class="small">Modular Kitchen</h6>
+                                                  <p class="small text-muted">Lorem ipsum, or lipsum as it is sometimes known</p>
+                                             </div>
+                                        </div>
+                                        <div class="col-6">
+                                             <div class="highlight-item">
+                                                  <h6 class="small">Luxury Corner Homes</h6>
+                                                  <p class="small text-muted">Lorem ipsum, or lipsum as it is sometimes known</p>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>    
+               </div>
+          </section>
+
+          <section class="price bg-primary" id="price">
+               <div class="price-wrapper py-5">
+                    <div class="container">
+                         <div class="h5 text-white mb-4 section-heading text-uppercase text-center mb-5">Mahindra Luminare<br/>Price List</div>
+                         <div class="table-responsive">
+                              <table class="table text-white text-center">
+                                   <tbody>
+                                        <tr>
+                                             <th>UNIT TYPE</th>
+                                             <th>SIZE(SQ. FT.)</th>
+                                             <th>PRICE</th>
+                                             <th>ENQUIRE</th>
+                                        </tr>
+                                        <tr>
+                                             <td>3 BHK</td>
+                                             <td>2985 Super Area sq. ft.</td>
+                                             <td><i class="fa fa-inr"></i>3.58 cr*</td>
+                                             <td><a class="text-white" href="#">Enquire Now</a></td>
+                                        </tr>
+                                        <tr>
+                                             <td>4 BHK</td>
+                                             <td>3625 Super Area sq. ft.</td>
+                                             <td>On Request</td>
+                                             <td><a class="text-white" href="#">Enquire Now</a></td>
+                                        </tr>
+                                        <tr>
+                                             <td>4 BHK Penthouse</td>
+                                             <td>4887 Super Area sq. ft.</td>
+                                             <td>On Request</td>
+                                             <td><a class="text-white" href="#">Enquire Now</a></td>
+                                        </tr>
+                                   </tbody>
+                              </table>
+                         </div>
+                         <div class="text-center py-5">
+                              <a class="btn text-uppercase py-3 px-5 font-weight-bold btn-outline-light btn-download" href="#">Download Floor Plan</a>
+                         </div>
+
+                    </div>
+
+
+               </div>
+          </section>
+          <section class="bg-white py-5">
+               <div class="container">
+                    <div class="h3 mb-4 section-heading text-primary text-center mb-5">SPECIFICATIONS</div>
+                    <div class="row align-items-center">
+                         <div class="col-6 col-lg-3 text-center text-primary small border-left border-right my-3">
+                              <p><img src="./dist/images/icon/plot.png"/></p>   
+                              15 Acres<br/>Plot Area
+                         </div>
+                         <div class="col-6 col-lg-3 text-center text-primary small border-right my-3">
+                              <p><img src="./dist/images/icon/spec2.png"/></p>   
+                              G + 19<br/>Floors
+                         </div>
+                         <div class="col-6 col-lg-3 text-center text-primary small border-left border-right my-3">
+                              <p><img src="./dist/images/icon/spec3.png"/></p>   
+                              3 Level<br/>Parking
+                         </div>
+                         <div class="col-6 col-lg-3 text-center text-primary small border-right my-">
+                              <p><img src="./dist/images/icon/spec4.png"/></p>   
+                              20<br/>Towers
+                         </div>
+                    </div>
+               </div>    
+          </section>
+          <section class="bg-light py-5">
+               <div class="container">
+                    <div class="row">
+                         <div class="col-12 col-lg-6">
+                              <img src="./dist/images/location.jpg"/>
+                         </div>
+                         <div class="col-12 col-lg-6">
+                              <div class="h4 mb-4 section-heading">Location Advantages</div>
+                              <ul class="list-inline">
+                                   <li class="mb-3"><i class="fa fa-star-o text-primary mr-2"></i>2 kms from NH - 8</li>
+                                   <li class="mb-3"><i class="fa fa-star-o text-primary mr-2"></i>10 minutes drive from Indira Gandhi International (IGI) Airport</li>
+                                   <li class="mb-3"><i class="fa fa-star-o text-primary mr-2"></i>5 minutes from Ambience Mall and Cyber Hub.</li>
+                                   <li class="mb-3"><i class="fa fa-star-o text-primary mr-2"></i>Located within 1 km range from corporates like Sapient, Ernst & Young, Genpact etc</li>
+                                   <li class="mb-3"><i class="fa fa-star-o text-primary mr-2"></i>Located within a fully developed sector with matching infrastructure</li>
+                              </ul>
                          </div>
                     </div>
                </div>
           </section>
-          <div style="height:1300px"></div>
+          <section class="gallery pt-5" id="gallery">
+               <div class="h3 text-uppercase text-center mb-4 section-heading">Gallery</div>
+               <div class="container-fluid px-0">
+                    <div class="row no-gutters">
+                         <div class="col-6 col-lg-3">
+                              <a href="./dist/images/gallery/1.jpeg"><img src="./dist/images/gallery/thumb/1.jpg" class="w-100"/></a>
+                         </div>
+                         <div class="col-6 col-lg-3">
+                              <a href="./dist/images/gallery/2.jpg"><img src="./dist/images/gallery/thumb/2.jpg" class="w-100"/></a>
+                         </div>
+                         <div class="col-6 col-lg-3">
+                              <a href="./dist/images/gallery/3.jpg"><img src="./dist/images/gallery/thumb/3.jpg" class="w-100"/></a>
+                         </div>
+                         <div class="col-6 col-lg-3">
+                              <a href="./dist/images/gallery/4.jpg"><img src="./dist/images/gallery/thumb/4.jpg" class="w-100"/></a>
+                         </div>
+                         <div class="col-6 col-lg-3">
+                              <a href="./dist/images/gallery/5.jpg"><img src="./dist/images/gallery/thumb/5.jpg" class="w-100"/></a>
+                         </div>
+                         <div class="col-6 col-lg-3">
+                              <a href="./dist/images/gallery/6.jpeg"><img src="./dist/images/gallery/thumb/6.jpg" class="w-100"/></a>
+                         </div>
+                         <div class="col-6 col-lg-3">
+                              <a href="./dist/images/gallery/7.jpg"><img src="./dist/images/gallery/thumb/7.jpg" class="w-100"/></a>
+                         </div>
+                         <div class="col-6 col-lg-3">
+                              <a href="./dist/images/gallery/8.jpg"><img src="./dist/images/gallery/thumb/8.jpg" class="w-100"/></a>
+                         </div>
+                    </div>
+               </div>
+          </section>
+          <section class="why bg-dark" style="background-image:url('./dist/images/bg-why.jpg');background-size:cover;background-position:center">
+               <div class="container">
+                    <div class="row">
+                         <div class="col-12 col-lg-6 py-5 order-lg-2 text-white">
+                              <h5 class=" text-uppercase mb-4">Why Mahindra Luminare </h5>
+                              <p class="small">A LIFE MARKED WITH UNSEEN EXCLUSIVITY AND UTMOST PRIVACY AWAITS YOU. LUMINARE.</p>
+                              <p class="small">When one has reached a pinnacle in life, it&rsquo;s time to raise a toast. At an abode that epitomizes privacy and elegance. Luminare.</p>
+                              <p class="small">A home that befits your status. And a lifestyle that surpasses all benchmarks of luxury.</p>
+                              <p class="small">Built with high meticulousness and adorned with inimitable features galore, Luminare is definitely for the chosen few!</p>
+
+                         </div>
+                         <div class="col-12 col-lg-6 order-lg-1 py-5" style="min-height:300px;background-image:url('./dist/images/gallery/1.jpeg');background-size:cover;">
+                              <div class="py-5"></div>
+                         </div>
+                    </div>
+               </div>
+          </section>
+          <footer class="footer" style="background:#2e4891">
+               <div class="container">
+                    <div class="row">
+                         <div class="col-12 col-sm-6 col-lg-4 text-white small py-4">
+                              <h6 class="mb-3">Contact</h6>
+                              <a class="d-block w-100 pb-1"><i class="fa fa-phone"></i> +91-1234567890</a>
+                              <a class="d-block w-100 pb-1"><i class="fa fa-envelope"></i> info@example.com</a>
+                         </div>
+                         <div class="col-12 col-sm-6 col-lg-4 text-white small py-4">
+                              <h6 class="mb-3">Registered Office</h6>
+                              <a class="d-block w-100 pb-1"><i class="fa fa-map-marker"></i> Sohna Road, Gurgaon</a>
+                              <a class="d-block w-100 pb-1"><i class="fa fa-map-marker"></i> Sector-48, Gurgaon</a>
+                         </div>
+                         <div class="col-12 col-sm-6 col-lg-4 text-white small py-4">
+                              <h6 class="mb-3">Site Address</h6>
+                              <a class="d-block w-100 pb-1"><i class="fa fa-map-marker"></i> Sector-59, Opp- IRO Grand Arch, Village Behrampur Tehsil Sohna, Gurugram, Haryana 122011</a>
+                         </div>
+                    </div>  
+                    <div class="py-4 disclaimer">
+                         <p class="small text-white"><strong>Disclaimer: </strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>  
+               </div>
+          </footer>
+
+          <div class="rscontactfixed">
+               <a class="bg-primary text-white text-center d-block mb-2" href="#"><i class="fa fa-phone"></i></a>
+               <a class="bg-primary text-white text-center d-block mb-2" href="#"><i class="fa fa-whatsapp"></i></a>
+               <a class="bg-primary text-white text-center d-block mb-2" href="#"><i class="fa fa-file-pdf-o"></i></a>
+               <a class="bg-primary text-white text-center d-block mb-2" href="#"><i class="fa fa-youtube"></i></a>
+          </div>
+          <div class="modal fade" id="contact">
+               <div class="modal-dialog">
+                    <div class="modal-content">
+                         <div class="modal-header">
+                              <h4>Contact Us</h4>
+                              <button class="btn" type="button" data-dismiss="modal">&times;</button>
+                         </div>
+                         <div class="modal-body">
+                              <form class="rs-contact-form">
+                                   <div class="form-group">
+                                        <input type="text" class="form-control bg-light form-control-sm py-2 px-3 h-auto" placeholder="Name" />
+                                   </div>
+                                   <div class="form-group">
+                                        <input type="email" class="form-control bg-light form-control-sm py-2 px-3 h-auto" placeholder="Email" />
+                                   </div>
+                                   <div class="form-group">
+                                        <input type="text" class="form-control bg-light form-control-sm py-2 px-3 h-auto" placeholder="Phone" />
+                                   </div>
+                                   <div class="form-group">
+                                        <select name="city" class="form-control bg-light form-control-sm py-2 px-3 h-auto">
+                                             <option value="">City</option> 
+                                             <option value="Delhi">Delhi</option> 
+                                             <option value="Faridabad">Faridabad</option> 
+                                             <option value="Ghaziabad">Ghaziabad</option>
+                                             <option value="Gurugram">Gurugram</option> 
+                                             <option value="Noida">Noida</option>
+                                             <option value="Rohtak">Rohtak</option>
+                                             <option value="Sonipat">Sonipat</option>
+                                        </select>
+                                   </div>
+                                   <div class="form-group">
+                                        <textarea class="form-control bg-light form-control-sm py-2 px-3 h-auto" placeholder="Type Your message here..."></textarea>
+                                   </div>
+                                   <button class="btn btn-primary py-2 h-auto border-light btn-block text-uppercase">Submit</button>
+                              </form>
+                         </div>
+                    </div>
+               </div>
+          </div>
           <!-- Scripts -->
           <script type="text/javascript" src="./dist/js/jquery-3.3.1.min.js"></script>
           <script type="text/javascript" src="./dist/js/bootstrap.min.js"></script>
-          <script type="text/javascript" src="./dist/js/custom.js"></script>
           <script>
                $(window).scroll(function(e){
-                    if($(this).scrollTop() > )
+                    if($(this).scrollTop() > 130){
+                         $('.navbar-primary').addClass('fixed');
+                    }else{
+                         $('.navbar-primary').removeClass('fixed');                         
+                    }
                })
+          </script>
+          <script type="text/javascript">
+            $(document).on('click', '.navbar-primary a[href^="#"]', function (event) {
+                event.preventDefault();
+            
+                $('html, body').animate({
+                    scrollTop: ($($.attr(this, 'href')).offset().top-50)
+                }, 500);
+            });
           </script>
      </body>
 </html>

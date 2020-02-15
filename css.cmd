@@ -1,0 +1,1 @@
+sass --watch "scss/custom.scss":"dist/css/bootstrap.css"
